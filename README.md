@@ -1,5 +1,14 @@
 # promise utils
 
+- [promise utils](#promise-utils)
+  - [concurrent](#concurrent)
+  - [concurrentLiteral](#concurrentliteral)
+  - [sequential](#sequential)
+  - [sequentialLiteral](#sequentialliteral)
+  - [concurrentChunked](#concurrentchunked)
+
+> You are probably better off using [effect-js](https://github.com/Effect-TS/effect)
+
 ## concurrent
 
 > Just a Promise.all wrapper
