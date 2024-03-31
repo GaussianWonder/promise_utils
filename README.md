@@ -15,10 +15,10 @@
 
 ## concurrentLiteral
 
-Similar to concurrent, but accepts and correctly types results based on an incoming object.
+Similar to [concurrent](#concurrent), but accepts and correctly types results based on an incoming object.
 
 ```ts
-type Expected = {
+type Expected = { // this is inferred
   a: number;
   b: string;
   c: boolean;
@@ -36,7 +36,7 @@ const results: Expected = await concurrentLiteral({
 Accepts an array of promise factories and resolves them sequentially.
 
 ```ts
-type Expected = [number, string, boolean];
+type Expected = [number, string, boolean]; // this is inferred
 
 const results: Expected = await sequential([
   () => Promise.resolve(1),
@@ -52,7 +52,7 @@ const results: Expected = await sequential([
 Similar to [sequential](#sequential) and [concurrentLiteral](#concurrentliteral), but accepts and correctly types results based on an incoming object.
 
 ```ts
-type Expected = {
+type Expected = { // this is inferred
   a: number;
   b: string;
   c: boolean;
@@ -72,7 +72,7 @@ const results: Expected = await sequentialLiteral({
 Accepts an array of promise factories and resolves them concurrently in chunks, each chunk sequentially.
 
 ```ts
-type Expected = [number, string, boolean];
+type Expected = [number, string, boolean]; // this is inferred
 
 const results: Expected = await concurrentChunked(
   2,
